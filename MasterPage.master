@@ -1,0 +1,54 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        body {background:#335533; direction:rtl;}
+        h1{text-align:center; color:Olive;}
+        table{width: 100%; height: 100%; background-color:#DDFFDD;}
+    </style>
+</head>
+<body>
+    <table border="1" cellpadding="5" cellspacing="0">
+        <tr>
+            <td align="center">
+                <h1>אמנים ישראלים</h1>
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                <a href="index.aspx">דף הבית</a>
+                <a href="login.aspx">כניסה</a>
+                <a href="register.aspx">הרשמה</a>
+                <a href="about.aspx">על האתר</a>
+                <br>
+                <a href="tuna.aspx">טונה</a>
+                <a href="ravid.aspx">רבין פלוטניק</a>
+                <a href="atar.aspx">עטר מיינר</a>
+                <a href="arik.aspx">אריק איינשטיין</a>
+                <a href="mashina.aspx">משינה</a>
+            </td>
+        </tr>
+        <tr>
+          <td valign="top">
+            <div>
+                <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+          </td>
+        </tr>
+        <tr>
+            <td align="right">
+                נכתב על ידי <a href="mailto:moshehov241@gmail.com">משה חוביילו</a>
+                <br />
+                מספר כניסות: <%=visitCount%>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
