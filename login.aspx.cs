@@ -7,35 +7,36 @@ using System.Web.UI.WebControls;
 
 public partial class login : System.Web.UI.Page
 {
+    public string loginMsg = "";
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Request.Form["mySubmit"] != null)
+        Session["loggedIn"] = false;
+        if (Request.Form["submit"] != null)
         {
-            if (Request.Form["uName"] == "moshe" && Request.Form["pass"] == "12345" && (int)Session["count"] != 0)
+            string uName_m = Request.Form["uName"];
+            string uPass_m = Request.Form["uPass"];
+            Session["loginMsg"] = "";
+            if (uName_m == "moshe" &&  uPass_m == "12345" && (int)Session["count"] != 0)
             {
-                Session["ok"] = true;
-                Response.Redirect("gallery.aspx");
+                Session["loggedIn"] = true;
+                Session["uName"] = uName_m;
+                Session["uPass"] = uPass_m;
+                Response.Redirect("Gallery.aspx");
             }
             else
             {
                 if ((int)Session["count"] != 0)
                 {
                     Session["count"] = (int)Session["count"] - 1;
-                    string str = "טעית בשם משתמש או בסיסמא";
-                    str = str + "</ br>";
-                    str = str + " נשארו לך";
-                    str = str + Session["count"].ToString();
-                    str = str + "ניסיונות";
-                    Session["message"] = str;
-                    ScriptManager.RegisterClientScriptBlock(Page, this.GetType(), "Alert", Session["message"].ToString(), true);
+                    loginMsg = "טעית בשם משתמש או בסיסמא  נשארו לך " + Session["count"].ToString() + " נסיונות";
                 }
                 else
                 {
                     Session["count"] = 0;
-                    Response.Write("נגמרו לך הנסיונות");
+                    loginMsg = "נגמרו לך הנסיונות";
                 }
         
             }
         }
-    }    
+    }
 }

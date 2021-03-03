@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="login.aspx.cs" Inherits="login" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="login" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <title>אמנים ישראלים - כניסה</title>
@@ -12,9 +12,10 @@
       <br>
       <label for="password">סיסמא</label>
       <br>
-      <input type="password" id="pass" name="pass">
+      <input type="password" id="uPass" name="uPass">
       <br><br>
-      <input type="submit" name="submit" value="כניסה" />
+      <input type="submit" name="submit" id="submit" value="כניסה" />
     </form>
+    <h3><%= loginMsg%></h3>
 </asp:Content>
 

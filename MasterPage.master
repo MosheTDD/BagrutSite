@@ -25,6 +25,7 @@
                 <a href="index.aspx">דף הבית</a>
                 <a href="login.aspx">כניסה</a>
                 <a href="register.aspx">הרשמה</a>
+                <a href="AdminActions.aspx">פעולות מנהל</a>
                 <a href="about.aspx">על האתר</a>
                 <br>
                 <a href="tuna.aspx">טונה</a>

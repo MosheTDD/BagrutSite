@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="register.aspx.cs" Inherits="register" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Register.aspx.cs" Inherits="register" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <title>אמנים ישראלים - הרשמה</title>
@@ -36,11 +36,11 @@
             </tr>
             <tr>
                 <td>תחביבים</td>
-                <td><input type="checkbox" id="hob" name="hob" value="gaming" /> לשחק במחשב  
+                <td><input type="checkbox" id="hobbies" name="hobbies" value="gaming" /> לשחק במחשב  
                     <br />
-                    <input type="checkbox" id="hob" name="hob" value="coding" /> לתכנת
+                    <input type="checkbox" id="hobbies" name="hobbies" value="coding" /> לתכנת
                     <br />
-                    <input type="checkbox" id="hob" name="hob" value="workout" /> להתאמן
+                    <input type="checkbox" id="hobbies" name="hobbies" value="workout" /> להתאמן
                     <br />
                 </td>
             

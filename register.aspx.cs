@@ -12,19 +12,19 @@ public partial class register : System.Web.UI.Page
     {
         if (Request.Form["submit"] != null)
         {
-            string uName = Request.Form["uName"];
-            string uPass = Request.Form["uPass"];
-            int year = int.Parse(Request.Form["year"]);
-            string email = Request.Form["email"];
-            string megama = Request.Form["megama"];
-            string hob = Request.Form["hob"];
-            string favArtist = Request.Form["favArtist"];
+            string uName_m = Request.Form["uName"];
+            string uPass_m = Request.Form["uPass"];
+            int year_m = int.Parse(Request.Form["year"]);
+            string email_m = Request.Form["email"];
+            string megama_m = Request.Form["megama"];
+            string hobbie_m = Request.Form["hobbies"];
+            string favArtist_m = Request.Form["favArtist"];
 
             string tableName = "WebsiteUsers"; //שם הטבלה
                                                //SQL הכנת משפט
                                                //DB להכנסת הנתונים ל
 
-            string selectQuery = string.Format("SELECT email FROM {0} WHERE email = '{1}'", tableName, email);
+            string selectQuery = string.Format("SELECT email FROM {0} WHERE email = '{1}'", tableName, email_m);
             bool exists = MyAdoHelperAccess.IsExist(selectQuery);
 
             if (MyAdoHelperAccess.IsExist(selectQuery))
@@ -35,7 +35,7 @@ public partial class register : System.Web.UI.Page
             else
             {
                 string sql = string.Format("INSERT INTO {0} (uName, birthYear, uPass, email, hobbies, megama, favArtist) VALUES ('{1}', {2}, '{3}', '{4}', '{5}', '{6}', '{7}')"
-                    , tableName, uName, year, uPass, email, hob, megama, favArtist);
+                    , tableName, uName_m, year_m, uPass_m, email_m, hobbie_m, megama_m, favArtist_m);
                 MyAdoHelperAccess.DoQuery(sql);
                 Session["regStatus"] = "ההרשמה בוצע";
                 Response.Redirect("SignUpMessage.aspx");

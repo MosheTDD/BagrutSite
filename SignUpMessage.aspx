@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <form name="signupMessage" method="post" action="">
-        
+        <h1>ההרשמה בוצעה בהצלחה.</h1>
     </form>
 </asp:Content>
 
