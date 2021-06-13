@@ -33,6 +33,7 @@
                 <a href="atar.aspx">עטר מיינר</a>
                 <a href="arik.aspx">אריק איינשטיין</a>
                 <a href="mashina.aspx">משינה</a>
+                <a href="logout.aspx">יציאה</a>
             </td>
         </tr>
         <tr>
@@ -47,7 +48,7 @@
             <td align="right">
                 נכתב על ידי <a href="mailto:moshehov241@gmail.com">משה חוביילו</a>
                 <br />
-                מספר כניסות: <%=visitCount%>
+                מספר כניסות: <%=Application["visitCount"]%>
             </td>
         </tr>
     </table>

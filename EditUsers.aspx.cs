@@ -9,9 +9,7 @@ public partial class EditUsers : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        Session["isUser"] = false;
         bool isUser = (bool)Session["isUser"];
-
         if (isUser)
         {
             Session["message"] = "";

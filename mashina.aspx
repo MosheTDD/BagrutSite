@@ -15,6 +15,6 @@
 עד לפירוקה ב-1995 הוציאה הלהקה שבעה אלבומי אולפן ואלבום אוסף אחד.
         בשנת 2003 שבה הלהקה לפעילות, ומאז הוציאה שני אלבומי הופעה ושלושה אלבומי אולפן נוספים.
     </p>
-    <img style="width:25%;" src="https://img.haarets.co.il/img/1.7948246/2647015888.jpg?precrop=2048,1265,x0,y0&height=1186&width=1920" alt="משינה" />
+    <img style="width:25%;" src="Images/Mashina.jpg" />
 </asp:Content>
 

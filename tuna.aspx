@@ -10,6 +10,6 @@
         חברי הלהקה היו ניר דנן - גיטרה חשמלית, יניב בן עמי - גיטרה בס, יואב צ'צנובסקי
         - קלידים, חיים דיין - תופים, גלי שדה - זמרת ליווי, אוהד דהן (קספר) - זמר ליווי וזבולון בראפ ושירה.
     </p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Tuna_Show.png" alt="טונה" />
+    <img src="Images/Tuna.jpg" />
 </asp:Content>
 

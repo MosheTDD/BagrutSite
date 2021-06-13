@@ -12,6 +12,6 @@
         איינשטיין נחשב לאחד הזמרים הישראלים החשובים ביותר. מבקר המוזיקה יואב קוטנר תיאר אותו כך: "אריק איינשטיין הוא יותר מאשר הזמר הישראלי הגדול ביותר.
         איינשטיין הוא ארץ ישראל האמיתית".[1] בשנת 2013 יזמה שרת התרבות והספורט לימור לבנת פרס בשם פרס אריק איינשטיין.
     </p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Arik_Einstein_D499-097_taken_by_Israel_Government_Press_Office.jpg/330px-Arik_Einstein_D499-097_taken_by_Israel_Government_Press_Office.jpg" alt="אריק איינשטיין" />
+    <img src="Images/Arik.jpg" />
 </asp:Content>
 

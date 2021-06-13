@@ -11,8 +11,7 @@ public partial class AdminActions : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        bool isAdmin = false;
-        isAdmin = (bool) Session["isAdmin"];
+        bool isAdmin = (bool) Session["isAdmin"];
         if (!isAdmin)
         {
             Session["message"] = "אין לך הרשאה לגשת לדף זה";

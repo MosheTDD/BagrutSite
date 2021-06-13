@@ -7,9 +7,19 @@ using System.Web.UI.WebControls;
 
 public partial class MasterPage : System.Web.UI.MasterPage
 {
-    static protected int visitCount = 0;
     protected void Page_Load(object sender, EventArgs e)
     {
-        visitCount++;
+        if (Application["visitCount"] != null)
+        {
+            if ((bool)Session["firstVisit"])
+            {
+                Session["firstVisit"] = false;
+                Application["visitCount"] = (int)Application["visitCount"] + 1;
+            }
+        }
+        else
+        {
+            Application["visitCount"] = 1;
+        }
     }
 }
