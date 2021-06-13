@@ -6,5 +6,6 @@
     <h1>פעולות מנהל</h1>
     <h3><a href="DeleteUserByEmail.aspx">מחיקת משתמשים</a></h3>
     <h3><a href="EditUsers.aspx">עריכת משתמשים</a></h3>
+    <h3><a href="ViewUsers.aspx">הצגת משתמשים</a></h3>
 </asp:Content>
 

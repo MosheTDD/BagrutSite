@@ -14,8 +14,9 @@
       <br>
       <input type="password" id="uPass" name="uPass">
       <br><br>
+        <input type="reset" value="נקה" />
       <input type="submit" name="submit" id="submit" value="כניסה" />
+        <h3><%= Session["message"]%></h3>
     </form>
-    <h3><%= loginMsg%></h3>
 </asp:Content>
 

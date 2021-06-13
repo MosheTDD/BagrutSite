@@ -10,23 +10,28 @@ public partial class DeleteUserByEmail : System.Web.UI.Page
     public string userMsg = "";
     protected void Page_Load(object sender, EventArgs e)
     {
-        string tableName = "WebsiteUsers";
-        string selectQuery = "";
-
-        if (Request.Form["del_email"] != null)
+        bool isAdmin = (bool)Session["isAdmin"];
+        if (isAdmin)
         {
-            string uEmail_m = Request.Form["uEmail"];
-            selectQuery = string.Format("SELECT * FROM {0} WHERE email = '{1}'", tableName, uEmail_m);
+            string tableName = "WebsiteUsers";
+            string selectQuery = "";
 
-            if (MyAdoHelperAccess.IsExist(selectQuery))
+            if (Request.Form["del_email"] != null)
             {
-                string sql = string.Format("DELETE FROM {0} WHERE email = '{1}'", tableName, uEmail_m);
-                userMsg = MyAdoHelperAccess.RowsAffected(sql).ToString() + " משתמש שנמחק - " + uEmail_m;
-            }
-            else
-            {
-                userMsg = "המשתמש לא נמצא";
+                string uEmail_m = Request.Form["uEmail"];
+                selectQuery = string.Format("SELECT * FROM {0} WHERE email = '{1}'", tableName, uEmail_m);
+
+                if (MyAdoHelperAccess.IsExist(selectQuery))
+                {
+                    string sql = string.Format("DELETE FROM {0} WHERE email = '{1}'", tableName, uEmail_m);
+                    userMsg = MyAdoHelperAccess.RowsAffected(sql).ToString() + " משתמש שנמחק - " + uEmail_m;
+                }
+                else
+                {
+                    userMsg = "המשתמש לא נמצא";
+                }
             }
         }
+        else Response.Redirect("login.aspx");
     }
 }

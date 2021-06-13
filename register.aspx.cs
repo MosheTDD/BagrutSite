@@ -25,20 +25,19 @@ public partial class register : System.Web.UI.Page
                                                //DB להכנסת הנתונים ל
 
             string selectQuery = string.Format("SELECT email FROM {0} WHERE email = '{1}'", tableName, email_m);
-            bool exists = MyAdoHelperAccess.IsExist(selectQuery);
 
             if (MyAdoHelperAccess.IsExist(selectQuery))
             {
-                Session["regStatus"] = "המייל קיים במערכת";
-                Response.Redirect("SignUpMessage.aspx");
+                Session["message"] = "המייל קיים במערכת";
+                Response.Redirect("Messages.aspx");
             }
             else
             {
                 string sql = string.Format("INSERT INTO {0} (uName, birthYear, uPass, email, hobbies, megama, favArtist) VALUES ('{1}', {2}, '{3}', '{4}', '{5}', '{6}', '{7}')"
                     , tableName, uName_m, year_m, uPass_m, email_m, hobbie_m, megama_m, favArtist_m);
                 MyAdoHelperAccess.DoQuery(sql);
-                Session["regStatus"] = "ההרשמה בוצע";
-                Response.Redirect("SignUpMessage.aspx");
+                Session["message"] = "ההרשמה בוצע";
+                Response.Redirect("Messages.aspx");
             }
             Response.End();
         }

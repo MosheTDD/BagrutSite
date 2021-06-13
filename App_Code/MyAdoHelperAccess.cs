@@ -44,6 +44,58 @@ public class MyAdoHelperAccess
     /// To Execute update / insert / delete queries
     ///  הפעולה מקבלת שם קובץ ומשפט לביצוע ומבצעת את הפעולה על המסד
     /// </summary>
+    public static DataTable ExecuteDataTable(string sql)
+    {
+        OleDbConnection conn = ConnectToDb();
+        conn.Open();
+
+        OleDbDataAdapter tableAdapter = new OleDbDataAdapter(sql, conn);
+        DataTable dt = new DataTable();
+        tableAdapter.Fill(dt);
+        return dt;
+    }
+
+    public static string PrintDataTable(string sql)
+    {
+        DataTable dt = ExecuteDataTable(sql);
+        string bColor;
+        string admin;
+        bool color = false;
+        string str = "";
+        foreach (DataRow row in dt.Rows)
+        {
+            if (color)
+            {
+                bColor = " bColor='#7289da'";
+            }
+            else
+            {
+                bColor = " bColor='#2c2f33'";
+            }
+            if ((bool)row["IsAdmin"])
+            {
+                admin = "כן";
+            }
+            else
+            {
+                admin = "לא";
+            }
+
+            str += "<tr" + bColor + ">";
+            str += "<td>" + row["uName"] + "</td>";
+            str += "<td>" + row["uPass"] + "</td>";
+            str += "<td>" + row["birthYear"] + "</td>";
+            str += "<td>" + row["email"] + "</td>";
+            str += "<td>" + row["hobbies"] + "</td>";
+            str += "<td>" + row["megama"] + "</td>";
+            str += "<td>" + row["favArtist"] + "</td>";
+            str += "<td>" + admin + "</td>";
+            str += "</tr>";
+            color = !color;
+        }
+        return str;
+    }
+
 
     public static void DoQuery(string sql)//הפעולה מקבלת שם מסד נתונים ומחרוזת מחיקה/ הוספה/ עדכון
     //ומבצעת את הפקודה על המסד הפיזי
